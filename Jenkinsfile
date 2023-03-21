@@ -1,4 +1,6 @@
-node {
+node (
+		label 'BuiltIn'
+	) {
 	agent { label 'BuiltIn' }
 	tool name: 'DefaultMaven', type: 'maven' 
 	stage('Git Checkout') {
