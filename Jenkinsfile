@@ -3,7 +3,6 @@ node {
 	tools {
     	maven 'DefaultMaven' 
   	}
-	
 	stage('Git Checkout') {
 		git branch: 'main', url: 'https://github.com/victor-smirnov/selenium-test.git'
 	}
