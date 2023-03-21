@@ -1,5 +1,5 @@
 node (
-		label 'BuiltIn'
+		label: 'BuiltIn'
 	) {
 	agent { label 'BuiltIn' }
 	tool name: 'DefaultMaven', type: 'maven' 
