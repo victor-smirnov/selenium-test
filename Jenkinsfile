@@ -3,10 +3,7 @@ pipeline {
 	stages {
 		stage('Git Checkout') {
 			steps {
-				checkout(
-			    	[$class: 'GitSCM'],
-					url: 'https://github.com/victor-smirnov/selenium-test.git'
-				)
+				git branch: 'main', url: 'https://github.com/victor-smirnov/selenium-test.git'				
 			}
 		}
 		stage('Test Execution') {
