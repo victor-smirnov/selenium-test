@@ -1,5 +1,8 @@
 pipeline {
 	agent { label 'BuiltIn' }
+	tools {
+    	maven 'maven-3.9.1' 
+  	}
 	stages {
 		stage('Git Checkout') {
 			steps {
