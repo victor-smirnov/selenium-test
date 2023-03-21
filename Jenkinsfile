@@ -1,8 +1,6 @@
 node {
 	agent { label 'BuiltIn' }
-	tools {
-    	maven 'DefaultMaven' 
-  	}
+	tool name: 'DefaultMaven', type: 'maven' 
 	stage('Git Checkout') {
 		git branch: 'main', url: 'https://github.com/victor-smirnov/selenium-test.git'
 	}
