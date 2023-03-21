@@ -2,7 +2,14 @@ node {
 	agent { label 'BuiltIn' }
 	tool name: 'DefaultMaven', type: 'maven' 
 	stage('Git Checkout') {
-		git branch: 'main', url: 'https://github.com/victor-smirnov/selenium-test.git'
+		checkout([
+        	$class: 'GitSCM', 
+        	branches: [[name: '*/main']], 
+        	doGenerateSubmoduleConfigurations: false, 
+        	extensions: [[$class: 'CleanCheckout']], 
+        	submoduleCfg: [], 
+        	userRemoteConfigs: [[url: 'https://github.com/victor-smirnov/selenium-test.git']]
+    	])
 	}
 	stage('Test Execution') {
 		sh 'mvn clean verify'
