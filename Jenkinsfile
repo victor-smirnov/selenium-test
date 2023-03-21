@@ -14,7 +14,9 @@ node (
     	])
 	}
 	stage('Test Execution') {
-		sh 'mvn clean verify'
+		withMaven(maven: 'DefaultMaven') {
+			sh 'mvn clean verify'
+		}
 	}
 	stage('Publish Report') {
 		publishHTML(target: [
