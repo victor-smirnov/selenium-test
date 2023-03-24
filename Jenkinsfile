@@ -11,7 +11,7 @@ node (
         	extensions: [[$class: 'CleanCheckout']], 
         	submoduleCfg: [], 
         	userRemoteConfigs: [[url: 'https://github.com/victor-smirnov/selenium-test.git']]
-    	])
+    	]) 
 	}
 	stage('Test Execution') {
 		withMaven(maven: 'DefaultMaven') {
